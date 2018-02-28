@@ -7,10 +7,7 @@ c = conn.cursor()
 def serveFile():
   return static_file('index.html', root='./static')
 
-@route('/<filename>')
-def serveFile(filename):
-    return static_file(filename, root='./static')
-
+@route('/todolist'
 
 c.execute('''CREATE TABLE IF NOT EXISTS todo
             (id integer PRIMARY KEY,
