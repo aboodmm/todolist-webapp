@@ -1,0 +1,62 @@
+#mytodolist {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+.myheader {
+	text-align: center;
+	background-color: red;
+	color: white;
+}
+
+.footer {
+	text-align: center;
+	position: absolute;
+	width: 100%;
+	background-color: green;
+	bottom: 0;
+	left: 0;
+	color: white;
+}
+
+.footer a {
+	color: white;
+}
+
+.nav {
+	text-align: center;
+	width: 100%;
+	background-color: green;
+	left: 0;
+	color: white;
+}
+
+.nav a {
+	color: white;
+}
+
+.sidenav {
+    width: 160px;
+	height: 100%;
+	position: fixed;
+    left: 0;
+	top: 0;
+    background-color: #111;
+	z-index: 1;
+	color: white;
+	padding: 20px;
+	word-wrap: break-word;
+}
+
+.sidenav a {
+	color: yellow;
+}
+
+.main {
+	margin-left: 200px;
+	padding: 0px 10px;
+}
+
+body {
+	background-color: cyan;
+}
