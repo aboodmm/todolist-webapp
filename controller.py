@@ -9,10 +9,22 @@ def serveFile():
 def todo_list():
   conn = sqlite3.connect("todo.db")
   c = conn.cursor()
-  c.execute("SELECT * from todo")
+  c.execute("SELECT * FROM todo")
   result = c.fetchall()
   c.close()
 
+  output = template("make_table", rows=result)
+  return output
+
+@route("/todolist/<filters>")
+def todo_list(filters):
+  conn = sqlite3.connect("todo.db")
+  c = conn.cursor()
+  if filters == "due":
+    c.execute("SELECT * FROM todo ORDER BY due")
+  result = c.fetchall()
+  c.close()
+  
   output = template("make_table", rows=result)
   return output
 
@@ -20,11 +32,10 @@ def todo_list():
 def delete_item(item_id):
   conn = sqlite3.connect("todo.db")
   c = conn.cursor()
-  c.execute("DELETE from todo WHERE id = ?", (item_id,))
+  c.execute("DELETE from todo WHERE id = ?", (item_id))
   conn.commit()
   c.close()
   redirect("/todolist")
-  
 
 run(host="localhost", port=8080, reloader=True)
 

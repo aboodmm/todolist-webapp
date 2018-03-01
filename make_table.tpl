@@ -25,3 +25,7 @@
   </tr>
 %end
 </table>
+
+<button onclick="parent.location.href=
+'http://localhost:8080/todolist/due'"
+type="button">Sort by due date</button>
