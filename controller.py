@@ -1,17 +1,20 @@
 import sqlite3
 from bottle import *
-conn = sqlite3.connect('todo.db')
-c = conn.cursor()
 
 @route('/index')
 def serveFile():
   return static_file('index.html', root='./static')
 
-@route('/todolist'
+@route('/todolist')
+def todo_list():
+  conn = sqlite3.connect('todo.db')
+  c = conn.cursor()
+  c.execute("SELECT * from todo")
+  result = c.fetchall()
+  c.close()
 
-c.execute('''CREATE TABLE IF NOT EXISTS todo
-            (id integer PRIMARY KEY,
-            task text, description text, due text)''')
-conn.commit()
+  output = template('make_table', rows=result)
+  return output
+
 run(host='localhost', port=8080, reloader=True)
 
