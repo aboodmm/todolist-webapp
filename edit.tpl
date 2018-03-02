@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>cmps183: Homework 3</h1>
-<h2><a href="/">Home</a> <a href="/todolist">To Do List</a>
-<a href="/todoform">To Do Form</a></h2>
-<h3>New Task</h3>
-<form action="/new" method="POST">
+<h3>Modify Task id {{item}}</h3>
+<form action="/modify/{{item}}" method="POST">
 Task <input type="text" name="task"><br>
 Description <input type="text" name="descr"><br>
 Due date <input type="text" id="due" name="due"><br>
 Format - please use this - YYYY-MM-DD<br>
-<button type="submit">Add Task</button>
+<button type="submit">Edit Task number {{item}}</button>
 </form>
 </body>
 </html>

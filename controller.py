@@ -82,6 +82,26 @@ def update_item(item_id):
   c.close()
   redirect("/todolist")
 
+@route("/edit/<item_id>")
+def update_item(item_id):
+  redirect("/modify" + "/" + item_id)
+
+@route("/modify/<item_id>", method=["GET", "POST"])
+def modify_item(item_id):
+  if request.POST:
+    task = request.POST.get('task')
+    descr = request.POST.get('descr')
+    due = request.POST.get('due')
+    conn = sqlite3.connect('todo.db')
+    c = conn.cursor()  
+    c.execute("UPDATE todo SET title=?, description=?, due=? \
+              WHERE id LIKE ?", (task, descr, due, item_id))
+    conn.commit()
+    redirect("/todolist")
+  else:
+    output = template("edit", item = item_id)
+    return output
+    
 @route('/new', method=['POST'])
 def new_item():
   task = request.POST.get('task')
