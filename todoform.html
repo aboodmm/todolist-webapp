@@ -10,12 +10,8 @@ def redirectindex():
   redirect("/index")
 
 @route("/index")
-def serveIndex():
+def serveFile():
   return static_file("index.html", root="./static")
-
-@route("/todoform")
-def serveForm():
-  return static_file("todoform.html", root="./static")
 
 @route("/todolist")
 def todo_list():
