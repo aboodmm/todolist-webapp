@@ -90,7 +90,7 @@ def new_item():
   conn = sqlite3.connect('todo.db')
   c = conn.cursor()  
   c.execute("INSERT into todo VALUES (NULL, ?, ?, date('now'), \
-             ?, date('now'), 0", (task, descr, due))
+             ?, date('now'), 0)", (task, descr, due))
   conn.commit()
              
   return redirect('/todolist')
