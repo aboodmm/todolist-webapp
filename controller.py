@@ -94,7 +94,8 @@ def modify_item(item_id):
     due = request.POST.get('due')
     conn = sqlite3.connect('todo.db')
     c = conn.cursor()  
-    c.execute("UPDATE todo SET title=?, description=?, due=? \
+    c.execute("UPDATE todo SET title=?, description=?, due=?, \
+              updated=date('now') \
               WHERE id LIKE ?", (task, descr, due, item_id))
     conn.commit()
     redirect("/todolist")
