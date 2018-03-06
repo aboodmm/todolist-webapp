@@ -5,7 +5,6 @@ A cool todo list web app.
 ```
 $ apt-get install sqlite3
 $ pip install bottle
-$ pip install sqlite
 $ python controller.py 
 
 ```
