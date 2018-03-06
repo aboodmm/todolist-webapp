@@ -1,2 +1,6 @@
 # todolist-webapp
-built with bottlle.py framework and sqlite
+
+A cool todo list web app.
+
+![screenshot](https://raw.githubusercontent.com/aboodmm/todolist-webapp/img/a.png)
+
