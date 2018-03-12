@@ -5,19 +5,11 @@ dueasc = True
 postedasc = True
 updatedasc = True
 
-@route("/")
-def redirectindex():
-  redirect("/index")
-
-@route("/index")
+@route("/static/styles.css")
 def serveIndex():
-  return static_file("index.html", root="./static")
+  return static_file("styles.css", root="./static")
 
-@route("/todoform")
-def serveForm():
-  return static_file("todoform.html", root="./static")
-
-@route("/todolist")
+@route("/")
 def todo_list():
   conn = sqlite3.connect("todo.db")
   c = conn.cursor()

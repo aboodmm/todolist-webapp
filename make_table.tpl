@@ -1,7 +1,9 @@
-<h1>cmps183: Homework 3</h1>
-<h2><a href="/">Home</a> <a href="/todolist">To Do List</a>
-<a href="/todoform">To Do Form</a></h2>
-
+<head>
+  <link rel="stylesheet" type="text/css" href="/static/styles.css">
+</head>
+<div class="myheader">
+<h1>cmps183: Homework 4</h1>
+</div>
 <table>
   <tr>
     <td>Id</td>
@@ -59,3 +61,16 @@ type="button">Sort by posted date</button>
 'http://localhost:8080/todolist/updated'"
 type="button">Sort by updated date</button>
 
+<h3>Create new task</h3>
+<form action="/new" method="POST">
+Task <input type="text" name="task"><br>
+Description <input type="text" name="descr"><br>
+Due date <input type="text" id="due" name="due"><br>
+Format - please use this - YYYY-MM-DD<br>
+<button type="submit">Add Task</button>
+</form>
+
+<div class="footer">
+  <h2>This is my beautiful footer. Admire the brilliant green
+      color.</h2>
+</div>
