@@ -63,7 +63,7 @@ def delete_item(item_id):
   c.execute("DELETE from todo WHERE id = ?", (item_id))
   conn.commit()
   c.close()
-  redirect("/todolist")
+  redirect("/")
 
 @route("/update/<item_id>")
 def update_item(item_id):
@@ -72,7 +72,7 @@ def update_item(item_id):
   c.execute("UPDATE todo set status = 1 WHERE id = ?", (item_id))
   conn.commit()
   c.close()
-  redirect("/todolist")
+  redirect("/")
 
 @route("/edit/<item_id>")
 def update_item(item_id):
@@ -90,7 +90,7 @@ def modify_item(item_id):
               updated=date('now') \
               WHERE id LIKE ?", (task, descr, due, item_id))
     conn.commit()
-    redirect("/todolist")
+    redirect("/")
   else:
     output = template("edit", item = item_id)
     return output
@@ -106,7 +106,7 @@ def new_item():
              ?, date('now'), 0)", (task, descr, due))
   conn.commit()
              
-  return redirect('/todolist')
+  return redirect('/')
 
 run(host="localhost", port=8080, reloader=True)
 

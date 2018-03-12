@@ -38,7 +38,7 @@
 </table>
 
 <button onclick="parent.location.href=
-'http://localhost:8080/todolist'"
+'http://localhost:8080/'"
 type="button">Show all</button>
 
 <button onclick="parent.location.href=
